@@ -3,12 +3,12 @@
 defined('_JEXEC') or die('Restricted access');
 require_once JPATH_ROOT .'/components/com_community/libraries/core.php';
 
-class plgCommunityExample extends CApplications
+class plgCommunityBDay extends CApplications
 {
 var $name = "BDay";
 var $_name = 'BDay';
 
-function plgCommunityExample(& $subject, $config)
+function plgCommunityBDay(& $subject, $config)
 {
 parent::__construct($subject, $config);
 }
