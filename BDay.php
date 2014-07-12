@@ -27,12 +27,21 @@ $birthday_arr = explode('-',$birthday);
 
 $cur_year_b_day = $cur_time_arr[0]."-".$birthday_arr[1]."-".$birthday_arr[2];
 
-if(strtotime($cur_year_b_day) < time())
-{
-    echo "Birthday already passed this year";
-}
-else
-{
-    $diff=strtotime($cur_year_b_day)-time();//returns current time in seconds
-    echo 'Days left to Birthday: ' . $days=floor($diff/(60*60*24));
-}
+$diff=strtotime($cur_year_b_day)-time();
+$days=floor($diff/(60*60*24));
+
+if($days == 0)
+    {
+    echo "Today is the birthday!";
+    }
+        else
+        {
+            if(strtotime($cur_year_b_day) < time())
+                {
+                echo "Birthday already passed this year";
+                }
+                    else
+                    {
+                    echo 'Days left to Birthday: ' . $days;
+                    }
+        }
