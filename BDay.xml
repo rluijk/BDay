@@ -13,7 +13,7 @@
     <description>Shows countdown to user's birthday in own profile.</description>
 
     <languages folder="language">
-        <language tag="en-GB">en-GB/en-GB.plg_community_bday.ini</language>
+        <language tag="en-GB">en-GB/x</language>
         <language tag="en-GB">en-GB/en-GB.plg_community_bday.sys.ini</language>
     </languages>
 
