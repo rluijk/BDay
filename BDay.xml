@@ -10,9 +10,9 @@
     <version>0.1 ALPHA</version>
     <isapplication>true</isapplication>
 
-    <description>PLG_BDAY_DESCRIPTION</description>
+    <description>Shows countdown to user's birthday in own profile.</description>
 
-    <languages>
+    <languages folder="language">
         <language tag="en-GB">en-GB.plg_community_bday.ini</language>
         <language tag="en-GB">en-GB.plg_community_bday.sys.ini</language>
     </languages>
@@ -29,10 +29,10 @@
                     <option value="0">No</option>
                     <option value="1">Yes</option>
                 </field>
-                <field name="position" type="list" default="content" label="Avalaible Positions" description="Select one or more available positions from the list. You can use Ctrl-click to select more than one item.">
-                    <option value="content">Content</option>
-                    <option value="sidebar-top">Sidebar Top</option>
-                    <option value="sidebar-bottom">Sidebar Bottom</option>
+                <field name="position" type="list" default="content" label="Position" description="Default position if you select this as core apps">
+                    <option value="content">Main content</option>
+                    <option value="sidebar-top">Sidebar top</option>
+                    <option value="sidebar-bottom">Sidebar bottom</option>
                 </field>
             </fieldset>
         </fields>
