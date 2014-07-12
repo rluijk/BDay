@@ -9,6 +9,8 @@
 
 defined('_JEXEC') or die('Restricted access');
 require_once JPATH_ROOT .'/components/com_community/libraries/core.php';
+$lang = JFactory::getLanguage();
+$lang->load('bday');
 
 
 class plgCommunityBDay extends CApplications
