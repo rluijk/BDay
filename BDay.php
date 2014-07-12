@@ -32,16 +32,16 @@ $days=floor($diff/(60*60*24));
 
 if($days == 0)
     {
-    echo "Today is the birthday!";
+    echo "BDAY_TODAY_IS_BIRTHDAY";
     }
         else
         {
             if(strtotime($cur_year_b_day) < time())
                 {
-                echo "Birthday already passed this year";
+                echo "BDAY_PASSED_THIS_YEAR";
                 }
                     else
                     {
-                    echo 'Days left to Birthday: ' . $days;
+                    echo 'BDAY_DAYS_TO_BIRTHDAY' . $days;
                     }
         }
