@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="2.5" type="plugin" group="community" method="upgrade">
+<extension version="3.3" type="plugin" group="community" method="upgrade">
     <name>Community - Example</name>
     <author>Author Name</author>
-    <creationDate>Febraury 2013</creationDate>
-    <copyright>Copyright 2013 - Your Company</copyright>
+    <creationDate>July 2014</creationDate>
+    <copyright>Copyright 2014 - Eric Tracz</copyright>
     <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
-    <authorEmail>author@email.com</authorEmail>
-    <authorUrl>http://www.site.name</authorUrl>
-    <version>x.y.z</version>
+    <authorEmail>arkadiusz.tracz@gmail.com</authorEmail>
+    <authorUrl>http://www.friq.pl</authorUrl>
+    <version>0.1 ALPHA</version>
     <isapplication>true</isapplication>
 
-    <description>PLG_EXAMPLE_DESCRIPTION</description>
+    <description>PLG_BDAY_DESCRIPTION</description>
 
     <languages>
-        <language tag="en-GB">en-GB.plg_community_example.ini</language>
-        <language tag="en-GB">en-GB.plg_community_example.sys.ini</language>
+        <language tag="en-GB">en-GB.plg_community_bday.ini</language>
+        <language tag="en-GB">en-GB.plg_community_bday.sys.ini</language>
     </languages>
 
     <files>
-        <file plugin="example">example.php</file>
+        <file plugin="bday">bday.php</file>
         <folder>example</folder>
     </files>
 
@@ -29,7 +29,7 @@
                     <option value="0">No</option>
                     <option value="1">Yes</option>
                 </field>
-                <field name="position" type="list" default="content" label="Avalaible Positions" description="Select one or more available positions from the list.  You can use Ctrl-click to select more than one item.">
+                <field name="position" type="list" default="content" label="Avalaible Positions" description="Select one or more available positions from the list. You can use Ctrl-click to select more than one item.">
                     <option value="content">Content</option>
                     <option value="sidebar-top">Sidebar Top</option>
                     <option value="sidebar-bottom">Sidebar Bottom</option>
