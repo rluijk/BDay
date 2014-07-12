@@ -20,16 +20,19 @@ var $_name = 'bday';
 $cuser = CFactory::getUser();
 $data = $cuser->getInfo('FIELD_BIRTHDATE');
 
-echo "$data";
-echo '\r\n';
+$birthday = $data;
+$cur_day = date('Y-m-d');
+$cur_time_arr = explode('-',$cur_day);
+$birthday_arr = explode('-',$birthday);
 
-//date in mm/dd/yyyy format; or it can be in other formats as well
-$birthDate == $data;
-//explode the date to get month, day and year
-$birthDate = explode("/", $birthDate);
-//get age from date or birthdate
-$age = (date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birthDate[2]))) > date("md")
-    ? ((date("Y") - $birthDate[2]) - 1)
-    : (date("Y") - $birthDate[2]));
-echo "Age is:" . $age;
+$cur_year_b_day = $cur_time_arr[0]."-".$birthday_arr[1]."-".$birthday_arr[2];
 
+if(strtotime($cur_year_b_day) < time())
+{
+    echo "Birthday already passed this year";
+}
+else
+{
+    $diff=strtotime($cur_year_b_day)-time();//returns current time in seconds
+    echo 'Days left to Birthday: ' . $days=floor($diff/(60*60*24));
+}
