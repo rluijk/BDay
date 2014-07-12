@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.3" type="plugin" group="community" method="upgrade">
-    <name>Community - Example</name>
+    <name>Community - BDay</name>
     <author>Author Name</author>
     <creationDate>July 2014</creationDate>
     <copyright>Copyright 2014 - Eric Tracz</copyright>
@@ -19,7 +19,7 @@
 
     <files>
         <file plugin="bday">bday.php</file>
-        <folder>example</folder>
+        <folder>bday</folder>
     </files>
 
     <config>
