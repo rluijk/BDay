@@ -10,11 +10,11 @@
 defined('_JEXEC') or die('Restricted access');
 require_once JPATH_ROOT .'/components/com_community/libraries/core.php';
 
-function plgCommunityGuruCoursesTeach(& $subject, $config) {
-    //Load Language file.
-    JPlugin::loadLanguage ( 'plg_community_bday', JPATH_ADMINISTRATOR );
-    parent::__construct ( $subject, $config );
-}
+    function onProfileDisplay()
+    {
+        //Load Language file.
+        JPlugin::loadLanguage('plg_community_bday', JPATH_ADMINISTRATOR);
+    };
 
 
 class plgCommunityBDay extends CApplications
