@@ -10,18 +10,21 @@
 defined('_JEXEC') or die('Restricted access');
 require_once JPATH_ROOT .'/components/com_community/libraries/core.php';
 
-    function onProfileDisplay()
-    {
-        //Load Language file.
-        JPlugin::loadLanguage('plg_community_bday', JPATH_ADMINISTRATOR);
-    };
-
 
 class plgCommunityBDay extends CApplications
 {
-var $name = "BDay";
-var $_name = 'bday';
-}
+    var $name = "BDay";
+    var $_name = 'bday';
+
+
+
+
+
+function onProfileDisplay()
+{
+    //Load Language file.
+    JPlugin::loadLanguage('plg_community_bday', JPATH_ADMINISTRATOR);
+
 
 $cuser = CFactory::getUser();
 $data = $cuser->getInfo('FIELD_BIRTHDATE');
@@ -38,16 +41,19 @@ $days=floor($diff/(60*60*24));
 
 if($days == 0)
     {
-    echo "BDAY_TODAY_IS_BIRTHDAY";
+        echo JText::_('BDAY_TODAY_IS_BIRTHDAY');
     }
         else
         {
             if(strtotime($cur_year_b_day) < time())
                 {
-                echo "BDAY_PASSED_THIS_YEAR";
+                echo JText::_('BDAY_PASSED_THIS_YEAR');
                 }
                     else
                     {
-                    echo 'BDAY_DAYS_TO_BIRTHDAY' . $days;
+                    echo JText::_('BDAY_DAYS_TO_BIRTHDAY') . $days;
                     }
         }
+}
+
+}
