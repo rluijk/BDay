@@ -10,7 +10,6 @@
 defined('_JEXEC') or die('Restricted access');
 require_once JPATH_ROOT .'/components/com_community/libraries/core.php';
 
-
 class plgCommunityBDay extends CApplications
 {
     var $name = "BDay";
@@ -27,8 +26,7 @@ class plgCommunityBDay extends CApplications
     //Load Language file.
     JPlugin::loadLanguage('plg_community_bday', JPATH_ADMINISTRATOR);
 
-
-$cuser = CFactory::getUser();
+$cuser = CFactory::getRequestUser();
 $data = $cuser->getInfo('FIELD_BIRTHDATE');
 
 $birthday = $data;
