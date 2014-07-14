@@ -43,17 +43,23 @@ $days=floor($diff/(60*60*24));
 
 if($days == 0)
     {
-        echo JText::_('BDAY_TODAY_IS_BIRTHDAY');
+        ?>
+        <div><?php echo JText::_('BDAY_TODAY_IS_BIRTHDAY'); ?></div>
+        <?php
     }
         else
         {
             if(strtotime($cur_year_b_day) < time())
                 {
-                echo JText::_('BDAY_PASSED_THIS_YEAR');
+                ?>
+                <div><?php echo JText::_('BDAY_PASSED_THIS_YEAR');?></div>
+                <?php
                 }
                     else
                     {
-                    echo JText::_('BDAY_DAYS_TO_BIRTHDAY') . $days;
+                    ?>
+                    <div> <?php echo JText::_('BDAY_DAYS_TO_BIRTHDAY') . $days; ?></div>
+                    <?php
                     }
         }
     }
