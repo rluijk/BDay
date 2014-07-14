@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.3" type="plugin" group="community" method="upgrade">
-    <name>Community - BDay</name>
-    <author>Author Name</author>
+    <name>BDAY_NAME</name>
+    <author>Eric Tracz</author>
     <creationDate>July 2014</creationDate>
     <copyright>Copyright 2014 - Eric Tracz</copyright>
     <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
     <authorEmail>arkadiusz.tracz@gmail.com</authorEmail>
     <authorUrl>http://www.friq.pl</authorUrl>
-    <version>0.1 ALPHA</version>
+    <version>0.2 ALPHA</version>
     <isapplication>true</isapplication>
 
-    <description>Shows countdown to user's birthday in own profile.</description>
+    <description>BDAY_DESCRIPTION</description>
 
     <languages folder="language">
         <language tag="en-GB">en-GB/en-GB.plg_community_bday.ini</language>

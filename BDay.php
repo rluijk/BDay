@@ -16,12 +16,14 @@ class plgCommunityBDay extends CApplications
     var $name = "BDay";
     var $_name = 'bday';
 
+    function plgCommunityBDay(& $subject, $config)
+    {
+        parent::__construct($subject, $config);
+    }
 
 
-
-
-function onProfileDisplay()
-{
+    function onProfileDisplay()
+    {
     //Load Language file.
     JPlugin::loadLanguage('plg_community_bday', JPATH_ADMINISTRATOR);
 
@@ -54,6 +56,6 @@ if($days == 0)
                     echo JText::_('BDAY_DAYS_TO_BIRTHDAY') . $days;
                     }
         }
-}
+    }
 
 }
