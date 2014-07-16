@@ -40,7 +40,7 @@ class plgCommunityBDay extends CApplications
     $diff=strtotime($cur_year_b_day)-time();
     $days=floor($diff/(60*60*24));
 
-
+//displaying plugin in a plugin wrapper
     $content = $this->_getBDayHTML($days, $cur_year_b_day);
     return $content;
     }
