@@ -31,6 +31,7 @@ class plgCommunityBDay extends CApplications
     $data = $cuser->getInfo('FIELD_BIRTHDATE');
 
 
+
 //calculate days
     $birthday = $data;
     $cur_day = date('Y-m-d');
@@ -49,30 +50,31 @@ class plgCommunityBDay extends CApplications
 
         ob_start();
 
-if($days == 0)
-    {
-        ?>
-        <div><?php echo JText::_('BDAY_TODAY_IS_BIRTHDAY'); ?></div>
-        <?php
-    }
-        else
-        {
-            if(strtotime($cur_year_b_day) < time())
-                {
+        if($days == 0)
+            {
                 ?>
-                <div><?php echo JText::_('BDAY_PASSED_THIS_YEAR');?></div>
+                <div><?php echo JText::_('BDAY_TODAY_IS_BIRTHDAY'); ?></div>
                 <?php
+            }
+                else
+                {
+                    if(strtotime($cur_year_b_day) < time())
+                        {
+                        ?>
+                        <div><?php echo JText::_('BDAY_PASSED_THIS_YEAR');?></div>
+                        <?php
+                        }
+                            else
+                            {
+                            ?>
+                            <div> <?php echo JText::_('BDAY_DAYS_TO_BIRTHDAY') . $days; ?></div>
+                            <?php
+                            }
                 }
-                    else
-                    {
-                    ?>
-                    <div> <?php echo JText::_('BDAY_DAYS_TO_BIRTHDAY') . $days; ?></div>
-                    <?php
-                    }
-        }
 
-        $content	= ob_get_contents();
-        ob_end_clean();
-        return $content;
+                $content	= ob_get_contents();
+                ob_end_clean();
+                return $content;
     }
+
 }
