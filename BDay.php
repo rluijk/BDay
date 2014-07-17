@@ -32,49 +32,54 @@ class plgCommunityBDay extends CApplications
 
 
 
-//calculate days
-    $birthday = $data;
-    $cur_day = date('Y-m-d');
-    $cur_time_arr = explode('-',$cur_day);
-    $birthday_arr = explode('-',$birthday);
-    $cur_year_b_day = $cur_time_arr[0]."-".$birthday_arr[1]."-".$birthday_arr[2];
-    $diff=strtotime($cur_year_b_day)-time();
-    $days=floor($diff/(60*60*24));
+            //calculate days
+            $birthday = $data;
+            $cur_day = date('Y-m-d');
+            $cur_time_arr = explode('-',$cur_day);
+            $birthday_arr = explode('-',$birthday);
+            $cur_year_b_day = $cur_time_arr[0]."-".$birthday_arr[1]."-".$birthday_arr[2];
+            $diff=strtotime($cur_year_b_day)-time();
+            $days=floor($diff/(60*60*24));
+
+
 
 //displaying plugin in a plugin wrapper
     $content = $this->_getBDayHTML($days, $cur_year_b_day);
     return $content;
     }
-    static public function _getBDayHTML($days, $cur_year_b_day)
+            function _getBDayHTML($days, $cur_year_b_day)
     {
 
         ob_start();
 
+
         if($days == 0)
+        {
+            ?>
+            <div><?php echo JText::_('BDAY_TODAY_IS_BIRTHDAY'); ?></div>
+        <?php
+        }
+        else
+        {
+            if(strtotime($cur_year_b_day) < time())
             {
                 ?>
-                <div><?php echo JText::_('BDAY_TODAY_IS_BIRTHDAY'); ?></div>
-                <?php
+                <div><?php echo JText::_('BDAY_PASSED_THIS_YEAR');?></div>
+            <?php
             }
-                else
-                {
-                    if(strtotime($cur_year_b_day) < time())
-                        {
-                        ?>
-                        <div><?php echo JText::_('BDAY_PASSED_THIS_YEAR');?></div>
-                        <?php
-                        }
-                            else
-                            {
-                            ?>
-                            <div> <?php echo JText::_('BDAY_DAYS_TO_BIRTHDAY') . $days; ?></div>
-                            <?php
-                            }
-                }
+            else
+            {
+                ?>
+                <div> <?php echo JText::_('BDAY_DAYS_TO_BIRTHDAY') . $days; ?></div>
+            <?php
+            }
+        }
 
-                $content	= ob_get_contents();
-                ob_end_clean();
-                return $content;
+        $content	= ob_get_contents();
+        ob_end_clean();
+        return $content;
+
+
     }
 
 }
