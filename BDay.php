@@ -20,7 +20,6 @@ class plgCommunityBDay extends CApplications
         parent::__construct($subject, $config);
     }
 
-
     function onProfileDisplay()
     {
 
@@ -28,7 +27,9 @@ class plgCommunityBDay extends CApplications
     JPlugin::loadLanguage('plg_community_bday', JPATH_ADMINISTRATOR);
 
     $cuser = CFactory::getRequestUser();
-    $data = $cuser->getInfo('FIELD_BIRTHDATE');
+//get parameter from backend setting.
+    $param = $this->params->get('bdaycpf', 'defaultValue');
+    $data = $cuser->getInfo($param);
 
 //if field is empty, will say that the birthday field is not set and needs to be filled in.
     if(!$data)
@@ -46,8 +47,6 @@ class plgCommunityBDay extends CApplications
         $content = ob_get_contents();
         ob_end_clean();
         return $content;
-
-
         return;
         }
     }

@@ -46,7 +46,7 @@
                 </field>
                 <field name="bdaycpf"
                        type="text"
-                       default="FIELD_BIRTHDAY"
+                       default="FIELD_BIRTHDATE"
                        label="BDAY_FIELD_BDAYCPF_LABEL"
                        description="BDAY_FIELD_BDAYCPF"
                        size="5"
