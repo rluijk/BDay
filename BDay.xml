@@ -36,6 +36,10 @@
                     <option value="sidebar-bottom">Sidebar bottom</option>
                 </field>
             </fieldset>
+            <fieldset name="extra">
+                <field name="bdaycpf" type="text" default="FIELD_BIRTHDATE" label="Birthday Field" />
+
+            </fieldset>
         </fields>
     </config>
 </extension>
