@@ -39,7 +39,6 @@ class plgCommunityBDay extends CApplications
         {
 
             ob_start();
-
         ?>
         <div><?php echo JText::_('BDAY_SET_YOUR_BDAY');?></div>
         <?php
@@ -52,7 +51,7 @@ class plgCommunityBDay extends CApplications
         return;
         }
     }
-
+//if birthday field is set it will execute the following
             //calculate days
             $birthday = $data;
             $cur_day = date('Y-m-d');
@@ -64,7 +63,7 @@ class plgCommunityBDay extends CApplications
 
 
 
-//displaying plugin in a plugin wrapper
+//birthday today, passed this year and days left
     $content = $this->_getBDaySuccessHTML($days, $cur_year_b_day);
     return $content;
     }
@@ -78,7 +77,7 @@ class plgCommunityBDay extends CApplications
         {
             ?>
             <div><?php echo JText::_('BDAY_TODAY_IS_BIRTHDAY'); ?></div>
-        <?php
+            <?php
         }
         else
         {
@@ -86,13 +85,13 @@ class plgCommunityBDay extends CApplications
             {
                 ?>
                 <div><?php echo JText::_('BDAY_PASSED_THIS_YEAR');?></div>
-            <?php
+                <?php
             }
             else
             {
                 ?>
                 <div> <?php echo JText::_('BDAY_DAYS_TO_BIRTHDAY') . $days; ?></div>
-            <?php
+                <?php
             }
         }
 
