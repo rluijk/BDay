@@ -30,7 +30,10 @@ class plgCommunityBDay extends CApplications
     $cuser = CFactory::getRequestUser();
     $data = $cuser->getInfo('FIELD_BIRTHDATE');
 
-
+    if(!$data)
+    {
+        return;
+    }
 
             //calculate days
             $birthday = $data;
