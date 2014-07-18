@@ -30,9 +30,27 @@ class plgCommunityBDay extends CApplications
     $cuser = CFactory::getRequestUser();
     $data = $cuser->getInfo('FIELD_BIRTHDATE');
 
+//if field is empty, will say that the birthday field is not set and needs to be filled in.
     if(!$data)
     {
+        $content = JText::_('BDAY_SET_YOUR_BDAY');
+        return $content;
+        function _getBDayFailHTML()
+        {
+
+            ob_start();
+
+        ?>
+        <div><?php echo JText::_('BDAY_SET_YOUR_BDAY');?></div>
+        <?php
+
+        $content = ob_get_contents();
+        ob_end_clean();
+        return $content;
+
+
         return;
+        }
     }
 
             //calculate days
@@ -47,10 +65,10 @@ class plgCommunityBDay extends CApplications
 
 
 //displaying plugin in a plugin wrapper
-    $content = $this->_getBDayHTML($days, $cur_year_b_day);
+    $content = $this->_getBDaySuccessHTML($days, $cur_year_b_day);
     return $content;
     }
-            function _getBDayHTML($days, $cur_year_b_day)
+            function _getBDaySuccessHTML($days, $cur_year_b_day)
     {
 
         ob_start();
@@ -78,7 +96,7 @@ class plgCommunityBDay extends CApplications
             }
         }
 
-        $content	= ob_get_contents();
+        $content = ob_get_contents();
         ob_end_clean();
         return $content;
 
