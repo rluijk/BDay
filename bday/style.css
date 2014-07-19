@@ -1,5 +1,18 @@
-div#community-plugin-bday div.thebday {
+/*
+
+ * BDay Plugin for Jomsocial
+ * Version 0.7 ALPHA
+ *
+ * @copyright (C) 2014 Eric Tracz All Rights Reserved.
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ * @link http://friq.pl
+
+*/
+
+
+.thebday {
     margin: 10px 10px 10px 10px;
-    align-content: center;
+    text-align: center;
     vertical-align: middle;
+    background-color: #000000;
 }

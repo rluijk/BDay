@@ -10,6 +10,10 @@
 
 defined('_JEXEC') or die('Restricted access');
 require_once JPATH_ROOT .'/components/com_community/libraries/core.php';
+//load css
+$document 	= JFactory::getDocument();
+$css		= JURI::base() . 'plugins/community/bday/bday/style.css';
+$document->addStyleSheet($css);
 
 class plgCommunityBDay extends CApplications
 {
@@ -23,9 +27,6 @@ class plgCommunityBDay extends CApplications
 
     function onProfileDisplay()
     {
-//load css
-    $document = JFactory::getDocument();
-    $document->addStyleSheet( JURI::base() . 'plugins/community/bday/bday/style.css' );
 
 //Load Language file.
     JPlugin::loadLanguage('plg_community_bday', JPATH_ADMINISTRATOR);
@@ -80,10 +81,10 @@ class plgCommunityBDay extends CApplications
 
 
 //birthday today, passed this year and days left
-    $content = $this->_getBDaySuccessHTML($days, $cur_year_b_day, $badge, $document, $badgeheight,  $badgewidth);
+    $content = $this->_getBDaySuccessHTML($days, $cur_year_b_day, $badge, $badgeheight, $badgewidth, $document);
     return $content;
     }
-            function _getBDaySuccessHTML($days, $cur_year_b_day, $badge, $document, $badgeheight, $badgewidth)
+            function _getBDaySuccessHTML($days, $cur_year_b_day, $badge, $badgeheight, $badgewidth, $document)
     {
 
         ob_start();
