@@ -24,6 +24,9 @@ class plgCommunityBDay extends CApplications
     {
 //load images helpers and lib
     CFactory::load( 'helpers' , 'image' );
+    $badge = 'plugins/community/bday/bday/images/bday_badge.png';
+
+
 
 //Load Language file.
     JPlugin::loadLanguage('plg_community_bday', JPATH_ADMINISTRATOR);
@@ -65,10 +68,10 @@ class plgCommunityBDay extends CApplications
 
 
 //birthday today, passed this year and days left
-    $content = $this->_getBDaySuccessHTML($days, $cur_year_b_day);
+    $content = $this->_getBDaySuccessHTML($days, $cur_year_b_day, $badge);
     return $content;
     }
-            function _getBDaySuccessHTML($days, $cur_year_b_day)
+            function _getBDaySuccessHTML($days, $cur_year_b_day, $badge)
     {
 
         ob_start();
@@ -77,8 +80,8 @@ class plgCommunityBDay extends CApplications
         if($days == 0)
         {
             ?>
-            <div><?php echo JText::_('BDAY_TODAY_IS_BIRTHDAY'); ?></div>
-            <?php
+            <div><img src="<?php echo JURI::base(); ?><?php echo $badge ?>" height="100px" width="100px" /></div>
+        <?php
         }
         else
         {
