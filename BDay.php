@@ -1,7 +1,7 @@
 <?php
 /**
  * BDay Plugin for Jomsocial
- * Version 0.7 ALPHA
+ * Version 0.8 ALPHA
  *
  * @copyright (C) 2014 Eric Tracz All Rights Reserved.
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
