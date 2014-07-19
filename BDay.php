@@ -10,10 +10,7 @@
 
 defined('_JEXEC') or die('Restricted access');
 require_once JPATH_ROOT .'/components/com_community/libraries/core.php';
-//load css
-$document 	= JFactory::getDocument();
-$css		= JURI::base() . 'plugins/community/bday/bday/style.css';
-$document->addStyleSheet($css);
+
 
 class plgCommunityBDay extends CApplications
 {
@@ -30,6 +27,11 @@ class plgCommunityBDay extends CApplications
 
 //Load Language file.
     JPlugin::loadLanguage('plg_community_bday', JPATH_ADMINISTRATOR);
+
+//load css
+    $document 	= JFactory::getDocument();
+    $css		= JURI::base() . 'plugins/community/bday/bday/style.css';
+    $document->addStyleSheet($css);
 
 //Load the user who's profile u visit
     $cuser = CFactory::getRequestUser();
@@ -81,10 +83,10 @@ class plgCommunityBDay extends CApplications
 
 
 //birthday today, passed this year and days left
-    $content = $this->_getBDaySuccessHTML($days, $cur_year_b_day, $badge, $badgeheight, $badgewidth, $document);
+    $content = $this->_getBDaySuccessHTML($days, $cur_year_b_day, $badge, $badgeheight, $badgewidth);
     return $content;
     }
-            function _getBDaySuccessHTML($days, $cur_year_b_day, $badge, $badgeheight, $badgewidth, $document)
+            function _getBDaySuccessHTML($days, $cur_year_b_day, $badge, $badgeheight, $badgewidth)
     {
 
         ob_start();
@@ -93,7 +95,7 @@ class plgCommunityBDay extends CApplications
         if($days == 0)
         {
             ?>
-            <div><img src="<?php echo JURI::base(); ?><?php echo $badge ?>" height="<?php echo $badgeheight ?>px" width="<?php echo $badgewidth ?>px" /></div>
+            <div class="thebday"><img src="<?php echo JURI::base(); ?><?php echo $badge ?>" height="<?php echo $badgeheight ?>px" width="<?php echo $badgewidth ?>px" /></div>
         <?php
         }
         else
@@ -101,7 +103,7 @@ class plgCommunityBDay extends CApplications
             if(strtotime($cur_year_b_day) < time())
             {
                 ?>
-                <div class="thebday"><?php echo JText::_('BDAY_PASSED_THIS_YEAR');?></div>
+                <div><?php echo JText::_('BDAY_PASSED_THIS_YEAR');?></div>
                 <?php
             }
             else
