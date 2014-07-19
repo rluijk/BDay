@@ -22,19 +22,23 @@ class plgCommunityBDay extends CApplications
 
     function onProfileDisplay()
     {
-//load images helpers and lib
-    CFactory::load( 'helpers' , 'image' );
-    $badge = 'plugins/community/bday/bday/images/bday_badge.png';
-
-
+//load css
+    $document = JFactory::getDocument();
+    $document->addStyleSheet( JURI::base() . 'plugins/community/bday/bday/style.css' );
 
 //Load Language file.
     JPlugin::loadLanguage('plg_community_bday', JPATH_ADMINISTRATOR);
 
+//Load the user who's profile u visit
     $cuser = CFactory::getRequestUser();
+
 //get parameter from backend setting.
     $param = $this->params->get('bdaycpf', 'defaultValue');
     $data = $cuser->getInfo($param);
+
+//image path variable from params can be setup in backend.
+    $param = $this->params->get('bdaybadge', 'defaultValue');
+    $badge = $param;
 
 //if field is empty, will say that the birthday field is not set and needs to be filled in.
     if(!$data)
@@ -43,7 +47,6 @@ class plgCommunityBDay extends CApplications
         return $content;
         function _getBDayFailHTML()
         {
-
             ob_start();
         ?>
         <div><?php echo JText::_('BDAY_SET_YOUR_BDAY');?></div>
@@ -68,10 +71,10 @@ class plgCommunityBDay extends CApplications
 
 
 //birthday today, passed this year and days left
-    $content = $this->_getBDaySuccessHTML($days, $cur_year_b_day, $badge);
+    $content = $this->_getBDaySuccessHTML($days, $cur_year_b_day, $badge, $document);
     return $content;
     }
-            function _getBDaySuccessHTML($days, $cur_year_b_day, $badge)
+            function _getBDaySuccessHTML($days, $cur_year_b_day, $badge, $document)
     {
 
         ob_start();
@@ -88,7 +91,7 @@ class plgCommunityBDay extends CApplications
             if(strtotime($cur_year_b_day) < time())
             {
                 ?>
-                <div><?php echo JText::_('BDAY_PASSED_THIS_YEAR');?></div>
+                <div class="thebday"><?php echo JText::_('BDAY_PASSED_THIS_YEAR');?></div>
                 <?php
             }
             else
@@ -102,7 +105,6 @@ class plgCommunityBDay extends CApplications
         $content = ob_get_contents();
         ob_end_clean();
         return $content;
-
 
     }
 
