@@ -22,6 +22,8 @@ class plgCommunityBDay extends CApplications
 
     function onProfileDisplay()
     {
+//load images helpers and lib
+    CFactory::load( 'helpers' , 'image' );
 
 //Load Language file.
     JPlugin::loadLanguage('plg_community_bday', JPATH_ADMINISTRATOR);
