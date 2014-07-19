@@ -58,6 +58,20 @@
                        description="BDAY_FIELD_BDAYBADGE"
                        size="5"
                         />
+                <field name="bdaybadgeheight"
+                       type="text"
+                       default="100"
+                       label="BDAY_FIELD_BDAYBADGE_HEIGHT_LABEL"
+                       description="BDAY_FIELD_BDAYBADGE_HEIGHT"
+                       size="5"
+                        />
+                <field name="bdaybadgewidth"
+                       type="text"
+                       default="100"
+                       label="BDAY_FIELD_BDAYBADGE_WIDTH_LABEL"
+                       description="BDAY_FIELD_BDAYBADGE_WIDTH"
+                       size="5"
+                        />
             </fieldset>
         </fields>
 

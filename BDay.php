@@ -40,6 +40,14 @@ class plgCommunityBDay extends CApplications
     $param = $this->params->get('bdaybadge', 'defaultValue');
     $badge = $param;
 
+//badge height
+    $param = $this->params->get('bdaybadgeheight', 'defaultValue');
+    $badgeheight = $param;
+
+//badge width
+    $param = $this->params->get('bdaybadgewidth', 'defaultValue');
+    $badgewidth = $param;
+
 //if field is empty, will say that the birthday field is not set and needs to be filled in.
     if(!$data)
     {
@@ -71,10 +79,10 @@ class plgCommunityBDay extends CApplications
 
 
 //birthday today, passed this year and days left
-    $content = $this->_getBDaySuccessHTML($days, $cur_year_b_day, $badge, $document);
+    $content = $this->_getBDaySuccessHTML($days, $cur_year_b_day, $badge, $document, $badgeheight,  $badgewidth);
     return $content;
     }
-            function _getBDaySuccessHTML($days, $cur_year_b_day, $badge, $document)
+            function _getBDaySuccessHTML($days, $cur_year_b_day, $badge, $document, $badgeheight, $badgewidth)
     {
 
         ob_start();
@@ -83,7 +91,7 @@ class plgCommunityBDay extends CApplications
         if($days == 0)
         {
             ?>
-            <div><img src="<?php echo JURI::base(); ?><?php echo $badge ?>" height="100px" width="100px" /></div>
+            <div><img src="<?php echo JURI::base(); ?><?php echo $badge ?>" height="<?php echo $badgeheight ?>px" width="<?php echo $badgewidth ?>px" /></div>
         <?php
         }
         else
