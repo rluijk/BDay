@@ -36,6 +36,7 @@ class plgCommunityBDay extends CApplications
 //Load the user who's profile u visit
     $cuser = CFactory::getRequestUser();
 
+
 //get parameter from backend setting.
     $param = $this->params->get('bdaycpf', 'defaultValue');
     $data = $cuser->getInfo($param);
@@ -44,8 +45,10 @@ class plgCommunityBDay extends CApplications
     $param = $this->params->get('bdaybadge', 'defaultValue');
     $badge = $param;
 
-        if(!$badge)
-        {$badge = '/plugins/community/bday/bday/images/bday_badge.png';}
+//if image field is empty go to the default path
+    if(!$badge)
+    {$badge = '/plugins/community/bday/bday/images/bday_badge.png';}
+
 //badge height
     $param = $this->params->get('bdaybadgeheight', 'defaultValue');
     $badgeheight = $param;
@@ -98,7 +101,7 @@ class plgCommunityBDay extends CApplications
         {
             ?>
             <div class="thebday"><img src="<?php echo JURI::base(); ?><?php echo $badge ?>" height="<?php echo $badgeheight ?>px" width="<?php echo $badgewidth ?>px" /></div>
-        <?php
+            <?php
         }
         else
         {
