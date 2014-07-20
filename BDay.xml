@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="0.7 ALPHA" type="plugin" group="community" method="upgrade">
+<extension version="0.9 ALPHA" type="plugin" group="community" method="upgrade">
     <name>BDAY_NAME</name>
     <author>Eric Tracz</author>
     <creationDate>July 2014</creationDate>
@@ -7,7 +7,7 @@
     <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
     <authorEmail>arkadiusz.tracz@gmail.com</authorEmail>
     <authorUrl>http://www.friq.pl</authorUrl>
-    <version>0.8 ALPHA</version>
+    <version>0.9 ALPHA</version>
     <isapplication>true</isapplication>
 
     <description>BDAY_DESCRIPTION</description>
@@ -15,6 +15,7 @@
     <languages folder="language">
         <language tag="en-GB">en-GB/en-GB.plg_community_bday.ini</language>
         <language tag="en-GB">en-GB/en-GB.plg_community_bday.sys.ini</language>
+        <language tag="pl-PL">pl-PL/pl-PL.plg_community_bday.ini</language>
     </languages>
 
 
@@ -32,8 +33,8 @@
                        default="0"
                        label="BDAY_FIELD_CORE_APP_LABEL"
                        description="BDAY_FIELD_CORE_APP_DESC">
-                    <option value="0">No</option>
-                    <option value="1">Yes</option>
+                    <option value="0">BDAY_FIELD_NO</option>
+                    <option value="1">BDAY_FIELD_YES</option>
                 </field>
                 <field name="position"
                        type="list"
@@ -52,7 +53,7 @@
                        size="5"
                         />
                 <field name="bdaybadge"
-                       type="text"
+                       type="media"
                        default="/plugins/community/bday/bday/images/bday_badge.png"
                        label="BDAY_FIELD_BDAYBADGE_LABEL"
                        description="BDAY_FIELD_BDAYBADGE"

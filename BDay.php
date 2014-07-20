@@ -1,7 +1,7 @@
 <?php
 /**
  * BDay Plugin for Jomsocial
- * Version 0.8 ALPHA
+ * Version 0.9 ALPHA
  *
  * @copyright (C) 2014 Eric Tracz All Rights Reserved.
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
@@ -44,6 +44,8 @@ class plgCommunityBDay extends CApplications
     $param = $this->params->get('bdaybadge', 'defaultValue');
     $badge = $param;
 
+        if(!$badge)
+        {$badge = '/plugins/community/bday/bday/images/bday_badge.png';}
 //badge height
     $param = $this->params->get('bdaybadgeheight', 'defaultValue');
     $badgeheight = $param;
