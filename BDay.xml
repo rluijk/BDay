@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="0.9 ALPHA" type="plugin" group="community" method="upgrade">
+<extension version="1.0" type="plugin" group="community" method="upgrade">
     <name>BDAY_NAME</name>
     <author>Eric Tracz</author>
     <creationDate>July 2014</creationDate>
@@ -7,7 +7,7 @@
     <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
     <authorEmail>arkadiusz.tracz@gmail.com</authorEmail>
     <authorUrl>http://www.friq.pl</authorUrl>
-    <version>0.9 ALPHA</version>
+    <version>1.0</version>
     <isapplication>true</isapplication>
 
     <description>BDAY_DESCRIPTION</description>
@@ -29,12 +29,13 @@
             <fieldset name="basic">
                 <field
                        name="coreapp"
-                       type="list"
+                       class="btn-group btn-group-yesno"
+                       type="radio"
                        default="0"
                        label="BDAY_FIELD_CORE_APP_LABEL"
                        description="BDAY_FIELD_CORE_APP_DESC">
-                    <option value="0">BDAY_FIELD_NO</option>
                     <option value="1">BDAY_FIELD_YES</option>
+                    <option value="0">BDAY_FIELD_NO</option>
                 </field>
                 <field name="position"
                        type="list"
